@@ -90,7 +90,7 @@
                     "key": "works.creativecode.pylint.runOn",
                     "title": "Run PyLint on",
                     "type": "enum",
-                    "values":["Save", "File Change"],
+                    "values":["File Change", "Save"],
                     "default": "File Change"
                 },
                 {
