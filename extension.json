@@ -1,0 +1,161 @@
+{
+    "identifier": "works.creativecode.pylint-nova",
+    "name": "PyLint",
+    "organization": "CreativeCodeWorks",
+    "description": "PyLint support for Nova",
+    "version": "0.0.2",
+    "categories": [
+        "issues"
+    ],
+    "main": "main.js",
+    "activationEvents": [
+        "onLanguage:python"
+    ],
+    "repository": "https://github.com/mmshivesh/PyLint.novaextension",
+    "bugs": "https://github.com/mmshivesh/PyLint.novaextension/issues",
+    "entitlements": {
+        "process": true
+    },
+    "issueMatchers": {
+        "fatal": {
+            "pattern": {
+                "regexp": "^(.*\\.py):([0-9]+):([0-9]+):\\s(F[0-9]+):\\s(.*)(?=\\(.*\\))",
+                "message": 5,
+                "code": 4,
+                "file": 1,
+                "line": 2,
+                "column": 3,
+                "severity": "error"
+            }
+        },
+        "error": {
+            "pattern": {
+                "regexp": "^(.*\\.py):([0-9]+):([0-9]+):\\s(E[0-9]+):\\s(.*)(?=\\(.*\\))",
+                "message": 5,
+                "code": 4,
+                "file": 1,
+                "line": 2,
+                "column": 3,
+                "severity": "error"
+            }
+        },
+        "warning": {
+            "pattern": {
+                "regexp": "^(.*\\.py):([0-9]+):([0-9]+):\\s(W[0-9]+):\\s(.*)(?=\\(.*\\))",
+                "message": 5,
+                "code": 4,
+                "file": 1,
+                "line": 2,
+                "column": 3,
+                "severity": "warning"
+            }
+        },
+        "refactor": {
+            "pattern": {
+                "regexp": "^(.*\\.py):([0-9]+):([0-9]+):\\s(R[0-9]+):\\s(.*)(?=\\(.*\\))",
+                "message": 5,
+                "code": 4,
+                "file": 1,
+                "line": 2,
+                "column": 3,
+                "severity": "hint"
+            }
+        },
+        "convention": {
+            "pattern": {
+                "regexp": "^(.*\\.py):([0-9]+):([0-9]+):\\s(C[0-9]+):\\s(.*)(?=\\(.*\\))",
+                "message": 5,
+                "code": 4,
+                "file": 1,
+                "line": 2,
+                "column": 3,
+                "severity": "info"
+            }
+        }
+    },
+    "config": [
+        {
+            "title": "Options",
+            "description": "General Options.",
+            "type": "section",
+            "key": "works.creativecode.pylint.optionsSec",
+            "children": [
+                {
+                    "key": "works.creativecode.pylint.enabled",
+                    "title": "Enable PyLint",
+                    "type": "boolean",
+                    "default": true
+                },
+                {
+                    "key": "works.creativecode.pylint.runOn",
+                    "title": "Run PyLint on",
+                    "type": "enum",
+                    "values":["Save", "File Change"],
+                    "default": "File Change"
+                },
+                {
+                    "key": "works.creativecode.pylint.path",
+                    "title": "Path to PyLint",
+                    "type": "path",
+                    "default": "/usr/local/bin/pylint",
+                    "description": "Manually set the path for the PyLint executable.",
+                    "placeholder": "pylint"
+                },
+                {
+                    "key": "works.creativecode.pylint.args",
+                    "title": "PyLint arguments",
+                    "description": "PyLint command line arguments",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "title": "Pylint Issues",
+            "description": "Map PyLint issue categories and Nova's Issue Severity",
+            "type": "section",
+            "key": "works.creativecode.pylint.issueSec",
+            "children": [
+                {
+                    "key": "works.creativecode.pylint.fatalIS",
+                    "title": "PyLint Fatal(F) Errors",
+                    "description": "Fatal errors that stop PyLint from linting",
+                    "type": "enum",
+                    "values": ["Error", "Warning", "Hint", "Info", "Ignore"],
+                    "default": "Error"
+                },
+                {
+                    "key": "works.creativecode.pylint.errorIS",
+                    "title": "PyLint Errors(E)",
+                    "description": "Bugs in the code",
+                    "type": "enum",
+                    "values": ["Error", "Warning", "Hint", "Info", "Ignore"],
+                    "default": "Error"
+                },
+                {
+                    "key": "works.creativecode.pylint.warningIS",
+                    "title": "PyLint Warning(W) issues",
+                    "description": "Python specific problems",
+                    "type": "enum",
+                    "values": ["Error", "Warning", "Hint", "Info", "Ignore"],
+                    "default": "Warning"
+                },
+                {
+                    "key": "works.creativecode.pylint.refactorIS",
+                    "title": "PyLint Refactor(R) issues",
+                    "description": "Code smell issues",
+                    "type": "enum",
+                    "values": ["Error", "Warning", "Hint", "Info", "Ignore"],
+                    "default": "Hint"
+                },
+                {
+                    "key": "works.creativecode.pylint.conventionIS",
+                    "title": "PyLint Convention(C) issues",
+                    "type": "enum",
+                    "description": "Programming standard violations",
+                    "values": ["Error", "Warning", "Hint", "Info", "Ignore"],
+                    "default": "Info"
+                }
+            ]
+        }
+    ]
+}
