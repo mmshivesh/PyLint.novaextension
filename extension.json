@@ -3,7 +3,7 @@
     "name": "PyLint",
     "organization": "CreativeCodeWorks",
     "description": "PyLint support for Nova",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "categories": [
         "issues"
     ],
