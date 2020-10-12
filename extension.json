@@ -3,7 +3,7 @@
     "name": "PyLint",
     "organization": "CreativeCodeWorks",
     "description": "PyLint support for Nova",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "categories": [
         "issues"
     ],
@@ -90,6 +90,7 @@
                     "key": "works.creativecode.pylint.runOn",
                     "title": "Run PyLint on",
                     "type": "enum",
+                    "description": "Needs an extension restart to apply changes.",
                     "values":["File Change", "Save"],
                     "default": "File Change"
                 },
@@ -106,6 +107,13 @@
                     "title": "PyLint arguments",
                     "description": "PyLint command line arguments",
                     "type": "string"
+                },
+                {
+                    "key": "works.creativecode.pylint.useMinimalArgs",
+                    "title": "PyLint use Minimal Argument list",
+                    "description": "A Preconfigured list of minimal command line arguments. Will be ignored if any CLI arguments are set.",
+                    "type": "boolean",
+                    "default": true
                 }
             ]
         },

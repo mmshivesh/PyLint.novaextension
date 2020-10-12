@@ -1,5 +1,10 @@
 # ChangeLog
 
+## Version 0.0.5
+### Features
+- Added an option to use a preconfigured list of PyLint CLI arguments
+- Disable Linting option moved to IssueAssistant
+
 ## Version 0.0.4
 ### Improvements
 - Improved help text in Readme
